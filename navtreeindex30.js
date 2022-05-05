@@ -1,5 +1,7 @@
 var NAVTREEINDEX30 =
 {
+"structxt3dmodule_1_1xt3dtype.html#af7158b824644bb479cb9aa8f2440f7b8":[3,0,130,0,38],
+"structxt3dmodule_1_1xt3dtype.html#affd44f0ca21d935d1159b61fdaba0183":[3,0,130,0,6],
 "tdis_8f90.html":[4,0,0,3,1],
 "tdis_8f90.html#a0037e9c1a15c8323b890ff51413cde74":[4,0,0,3,1,33],
 "tdis_8f90.html#a011f43ae7ec20b725b0092529bda2b73":[4,0,0,3,1,26],
