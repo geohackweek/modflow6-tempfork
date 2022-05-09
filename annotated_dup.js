@@ -42,6 +42,7 @@ var annotated_dup =
     [ "gwfinterfacemodelmodule", "namespacegwfinterfacemodelmodule.html", "namespacegwfinterfacemodelmodule" ],
     [ "gwfmodule", "namespacegwfmodule.html", "namespacegwfmodule" ],
     [ "gwfmvrmodule", "namespacegwfmvrmodule.html", "namespacegwfmvrmodule" ],
+    [ "gwfmvrperioddatamodule", "namespacegwfmvrperioddatamodule.html", "namespacegwfmvrperioddatamodule" ],
     [ "gwfnpfgriddatamodule", "namespacegwfnpfgriddatamodule.html", "namespacegwfnpfgriddatamodule" ],
     [ "gwfnpfmodule", "namespacegwfnpfmodule.html", "namespacegwfnpfmodule" ],
     [ "gwfnpfoptionsmodule", "namespacegwfnpfoptionsmodule.html", "namespacegwfnpfoptionsmodule" ],

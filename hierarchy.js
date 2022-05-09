@@ -123,6 +123,7 @@ var hierarchy =
     [ "gwfmodeltype", null, [
       [ "gwfinterfacemodelmodule::gwfinterfacemodeltype", "structgwfinterfacemodelmodule_1_1gwfinterfacemodeltype.html", null ]
     ] ],
+    [ "gwfmvrperioddatamodule::gwfmvrperioddatatype", "structgwfmvrperioddatamodule_1_1gwfmvrperioddatatype.html", null ],
     [ "gwfnpfgriddatamodule::gwfnpfgriddatatype", "structgwfnpfgriddatamodule_1_1gwfnpfgriddatatype.html", null ],
     [ "gwfnpfoptionsmodule::gwfnpfoptionstype", "structgwfnpfoptionsmodule_1_1gwfnpfoptionstype.html", null ],
     [ "gwtadvoptionsmodule::gwtadvoptionstype", "structgwtadvoptionsmodule_1_1gwtadvoptionstype.html", null ],
@@ -492,6 +493,7 @@ var hierarchy =
     [ "GwfHfbType", null, null ],
     [ "GwfIcType", null, null ],
     [ "GwfModelType", null, null ],
+    [ "GwfMvrPeriodDataType", null, null ],
     [ "GwfMvrType", null, null ],
     [ "GwfNpfGridDataType", null, null ],
     [ "GwfNpfOptionsType", null, null ],

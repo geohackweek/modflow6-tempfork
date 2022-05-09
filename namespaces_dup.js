@@ -50,6 +50,7 @@ var namespaces_dup =
     [ "gwfinterfacemodelmodule", "namespacegwfinterfacemodelmodule.html", null ],
     [ "gwfmodule", "namespacegwfmodule.html", null ],
     [ "gwfmvrmodule", "namespacegwfmvrmodule.html", null ],
+    [ "gwfmvrperioddatamodule", "namespacegwfmvrperioddatamodule.html", null ],
     [ "gwfnpfgriddatamodule", "namespacegwfnpfgriddatamodule.html", null ],
     [ "gwfnpfmodule", "namespacegwfnpfmodule.html", null ],
     [ "gwfnpfoptionsmodule", "namespacegwfnpfoptionsmodule.html", null ],
