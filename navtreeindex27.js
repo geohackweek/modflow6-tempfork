@@ -1,5 +1,7 @@
 var NAVTREEINDEX27 =
 {
+"structprintsavemanagermodule_1_1printsavemanagertype.html#a21515f0a7fb2c6c20d9858ccc28011c9":[3,0,102,0,5],
+"structprintsavemanagermodule_1_1printsavemanagertype.html#a3034a0b8000c69bfd01eafb6b3a17134":[3,0,102,0,14],
 "structprintsavemanagermodule_1_1printsavemanagertype.html#a40e8dee7fa5abb1a9d6f65609a559535":[3,0,102,0,4],
 "structprintsavemanagermodule_1_1printsavemanagertype.html#a535f45e7c9548439a8325873a67cbae3":[3,0,102,0,7],
 "structprintsavemanagermodule_1_1printsavemanagertype.html#a6a3c57dda2a520c5f822a52d155df0b0":[3,0,102,0,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX27 =
 "structspatialmodelconnectionmodule_1_1spatialmodelconnectiontype.html#a5ae70a7c6b08d9d72d919677c559b595":[3,0,111,0,23],
 "structspatialmodelconnectionmodule_1_1spatialmodelconnectiontype.html#a5f84d8eda827147bac3ffb6d45d1083e":[3,0,111,0,12],
 "structspatialmodelconnectionmodule_1_1spatialmodelconnectiontype.html#a645f77704a48d189a9bc0b8afb306a83":[3,0,111,0,30],
-"structspatialmodelconnectionmodule_1_1spatialmodelconnectiontype.html#a7201234e098962b46f960bd3f75bdbc7":[3,0,111,0,8],
-"structspatialmodelconnectionmodule_1_1spatialmodelconnectiontype.html#a753c85e9500d990689a5f3aceac3a406":[3,0,111,0,22],
-"structspatialmodelconnectionmodule_1_1spatialmodelconnectiontype.html#a7e866aaef09216aa3f86c6970d2d8722":[3,0,111,0,17]
+"structspatialmodelconnectionmodule_1_1spatialmodelconnectiontype.html#a7201234e098962b46f960bd3f75bdbc7":[3,0,111,0,8]
 };
