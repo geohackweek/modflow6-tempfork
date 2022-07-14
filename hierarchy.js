@@ -12,10 +12,10 @@ var hierarchy =
       [ "circulargeometrymodule::circulargeometrytype", "structcirculargeometrymodule_1_1circulargeometrytype.html", null ],
       [ "rectangulargeometrymodule::rectangulargeometrytype", "structrectangulargeometrymodule_1_1rectangulargeometrytype.html", null ]
     ] ],
+    [ "basemodelmodule::basemodeltype", "structbasemodelmodule_1_1basemodeltype.html", null ],
     [ "basemodeltype", null, [
       [ "numericalmodelmodule::numericalmodeltype", "structnumericalmodelmodule_1_1numericalmodeltype.html", null ]
     ] ],
-    [ "basemodelmodule::basemodeltype", "structbasemodelmodule_1_1basemodeltype.html", null ],
     [ "basesolutionmodule::basesolutiontype", "structbasesolutionmodule_1_1basesolutiontype.html", null ],
     [ "basesolutiontype", null, [
       [ "numericalsolutionmodule::numericalsolutiontype", "structnumericalsolutionmodule_1_1numericalsolutiontype.html", null ]
@@ -171,9 +171,8 @@ var hierarchy =
     ] ],
     [ "numericalmodeltype", null, [
       [ "gwfmodule::gwfmodeltype", "structgwfmodule_1_1gwfmodeltype.html", null ],
-      [ "gwtmodule::gwtmodeltype", "structgwtmodule_1_1gwtmodeltype.html", null ]
+      [ "transportmodelmodule::transportmodeltype", "structtransportmodelmodule_1_1transportmodeltype.html", null ]
     ] ],
-    [ "numericalpackagemodule::numericalpackagetype", "structnumericalpackagemodule_1_1numericalpackagetype.html", null ],
     [ "numericalpackagetype", null, [
       [ "bndmodule::bndtype", "structbndmodule_1_1bndtype.html", null ],
       [ "ghostnodemodule::ghostnodetype", "structghostnodemodule_1_1ghostnodetype.html", null ],
@@ -192,16 +191,17 @@ var hierarchy =
       [ "gwtssmmodule::gwtssmtype", "structgwtssmmodule_1_1gwtssmtype.html", null ],
       [ "tvbasemodule::tvbasetype", "structtvbasemodule_1_1tvbasetype.html", null ]
     ] ],
+    [ "numericalpackagemodule::numericalpackagetype", "structnumericalpackagemodule_1_1numericalpackagetype.html", null ],
     [ "obscontainermodule::obscontainertype", "structobscontainermodule_1_1obscontainertype.html", null ],
     [ "observemodule::obsdatatype", "structobservemodule_1_1obsdatatype.html", null ],
     [ "observemodule::observetype", "structobservemodule_1_1observetype.html", null ],
     [ "obsoutputlistmodule::obsoutputlisttype", "structobsoutputlistmodule_1_1obsoutputlisttype.html", null ],
     [ "obsoutputmodule::obsoutputtype", "structobsoutputmodule_1_1obsoutputtype.html", null ],
+    [ "obsmodule::obstype", "structobsmodule_1_1obstype.html", null ],
     [ "obstype", null, [
       [ "gwfobsmodule::gwfobstype", "structgwfobsmodule_1_1gwfobstype.html", null ],
       [ "gwtobsmodule::gwtobstype", "structgwtobsmodule_1_1gwtobstype.html", null ]
     ] ],
-    [ "obsmodule::obstype", "structobsmodule_1_1obstype.html", null ],
     [ "outputcontroldatamodule::outputcontroldatatype", "structoutputcontroldatamodule_1_1outputcontroldatatype.html", null ],
     [ "outputcontroltype", null, [
       [ "gwfocmodule::gwfoctype", "structgwfocmodule_1_1gwfoctype.html", null ],
@@ -254,6 +254,9 @@ var hierarchy =
     [ "timeseriesmanagermodule::timeseriesmanagertype", "structtimeseriesmanagermodule_1_1timeseriesmanagertype.html", null ],
     [ "timeseriesrecordmodule::timeseriesrecordtype", "structtimeseriesrecordmodule_1_1timeseriesrecordtype.html", null ],
     [ "timeseriesmodule::timeseriestype", "structtimeseriesmodule_1_1timeseriestype.html", null ],
+    [ "transportmodeltype", null, [
+      [ "gwtmodule::gwtmodeltype", "structgwtmodule_1_1gwtmodeltype.html", null ]
+    ] ],
     [ "tvbasetype", null, [
       [ "tvkmodule::tvktype", "structtvkmodule_1_1tvktype.html", null ],
       [ "tvsmodule::tvstype", "structtvsmodule_1_1tvstype.html", null ]
@@ -543,6 +546,7 @@ var hierarchy =
     [ "ims_base_pcu", null, null ],
     [ "ims_base_residual", null, null ],
     [ "ims_base_scale", null, null ],
+    [ "ims_misc_thomas", null, null ],
     [ "ims_odrv", null, null ],
     [ "initial_message", null, null ],
     [ "int32", null, null ],
@@ -760,6 +764,7 @@ var hierarchy =
     [ "totim", null, null ],
     [ "totimc", null, null ],
     [ "totimsav", null, null ],
+    [ "TransportModelType", null, null ],
     [ "tsmanager_cr", null, null ],
     [ "tvbase_da", null, null ],
     [ "TvBaseType", null, null ],
@@ -781,8 +786,8 @@ var hierarchy =
     [ "ulstlb", null, null ],
     [ "UNDEFINED", null, null ],
     [ "unique_values", null, null ],
-    [ "UPCASE", null, null ],
     [ "upcase", null, null ],
+    [ "UPCASE", null, null ],
     [ "urdaux", null, null ],
     [ "urword", null, null ],
     [ "URWORD", null, null ],
@@ -798,6 +803,7 @@ var hierarchy =
     [ "vcond", null, null ],
     [ "VDEBUG", null, null ],
     [ "VERSION", null, null ],
+    [ "VERSIONNUMBER", null, null ],
     [ "VSUMMARY", null, null ],
     [ "warnmsg", null, null ],
     [ "wel_create", null, null ],

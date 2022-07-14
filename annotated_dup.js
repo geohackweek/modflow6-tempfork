@@ -124,6 +124,7 @@ var annotated_dup =
     [ "timeseriesmanagermodule", "namespacetimeseriesmanagermodule.html", "namespacetimeseriesmanagermodule" ],
     [ "timeseriesmodule", "namespacetimeseriesmodule.html", "namespacetimeseriesmodule" ],
     [ "timeseriesrecordmodule", "namespacetimeseriesrecordmodule.html", "namespacetimeseriesrecordmodule" ],
+    [ "transportmodelmodule", "namespacetransportmodelmodule.html", "namespacetransportmodelmodule" ],
     [ "tvbasemodule", "namespacetvbasemodule.html", "namespacetvbasemodule" ],
     [ "tvkmodule", "namespacetvkmodule.html", "namespacetvkmodule" ],
     [ "tvsmodule", "namespacetvsmodule.html", "namespacetvsmodule" ],
