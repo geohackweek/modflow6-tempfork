@@ -21,6 +21,7 @@ var _memory_manager_8f90 =
     [ "allocate_str", "_memory_manager_8f90.html#a4780db4c21eb164665232983b1be0dca", null ],
     [ "allocate_str1d", "_memory_manager_8f90.html#a4577ed4305f7523f6947f8798fb0ecf0", null ],
     [ "checkin_dbl1d", "_memory_manager_8f90.html#ad803a305fe80202cdbbee23dd5c347fa", null ],
+    [ "checkin_dbl2d", "_memory_manager_8f90.html#aa3da6da6dd9e8903dfbd6543f98a1a7b", null ],
     [ "checkin_int1d", "_memory_manager_8f90.html#adaebe968303549959b18bfe9a922ca9a", null ],
     [ "copy_dbl1d", "_memory_manager_8f90.html#ae072fa90880d62debf453a1a1428fa93", null ],
     [ "copyptr_dbl1d", "_memory_manager_8f90.html#ac28c89286eb411da67b21c078f480cc9", null ],
