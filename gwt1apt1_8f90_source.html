@@ -2269,7 +2269,7 @@ $(document).ready(function(){initNavTree('gwt1apt1_8f90_source.html',''); initRe
 <div class="line"><a name="l02154"></a><span class="lineno"> 2154</span>&#160;    <span class="comment">! -- set up budobj</span></div>
 <div class="line"><a name="l02155"></a><span class="lineno"> 2155</span>&#160;    <span class="keyword">call </span><a class="code" href="namespacebudgetobjectmodule.html#a0b10034ed28f5a4131a181f960908a1d">budgetobject_cr</a>(this%budobj, this%packName)</div>
 <div class="line"><a name="l02156"></a><span class="lineno"> 2156</span>&#160;    <span class="keyword">call </span>this%budobj%budgetobject_df(this%ncv, nbudterm, 0, 0, &amp;</div>
-<div class="line"><a name="l02157"></a><span class="lineno"> 2157</span>&#160;                                     bddim_opt=<span class="stringliteral">&#39;M&#39;</span>)</div>
+<div class="line"><a name="l02157"></a><span class="lineno"> 2157</span>&#160;                                     bddim_opt=<span class="stringliteral">&#39;M&#39;</span>, ibudcsv=this%ibudcsv)</div>
 <div class="line"><a name="l02158"></a><span class="lineno"> 2158</span>&#160;    idx = 0</div>
 <div class="line"><a name="l02159"></a><span class="lineno"> 2159</span>&#160;    <span class="comment">!</span></div>
 <div class="line"><a name="l02160"></a><span class="lineno"> 2160</span>&#160;    <span class="comment">! -- Go through and set up each budget term</span></div>
@@ -2491,7 +2491,7 @@ $(document).ready(function(){initNavTree('gwt1apt1_8f90_source.html',''); initRe
 <div class="line"><a name="l02376"></a><span class="lineno"> 2376</span>&#160;      <span class="keywordflow">if</span> (this%iboundpak(n1) /= 0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l02377"></a><span class="lineno"> 2377</span>&#160;        igwfnode = this%flowbudptr%budterm(this%idxbudgwf)%id2(j)</div>
 <div class="line"><a name="l02378"></a><span class="lineno"> 2378</span>&#160;        q = this%hcof(j) * x(igwfnode) - this%rhs(j)</div>
-<div class="line"><a name="l02379"></a><span class="lineno"> 2379</span>&#160;        q = -q <span class="comment">! flip sign so relative to lake</span></div>
+<div class="line"><a name="l02379"></a><span class="lineno"> 2379</span>&#160;        q = -q <span class="comment">! flip sign so relative to advanced package feature</span></div>
 <div class="line"><a name="l02380"></a><span class="lineno"> 2380</span>&#160;<span class="keywordflow">      end if</span></div>
 <div class="line"><a name="l02381"></a><span class="lineno"> 2381</span>&#160;      <span class="keyword">call </span>this%budobj%budterm(idx)%update_term(n1, igwfnode, q)</div>
 <div class="line"><a name="l02382"></a><span class="lineno"> 2382</span>&#160;      <span class="keyword">call </span>this%apt_accumulate_ccterm(n1, q, ccratin, ccratout)</div>
@@ -3469,7 +3469,7 @@ $(document).ready(function(){initNavTree('gwt1apt1_8f90_source.html',''); initRe
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_32e188284d239da8bb14ec1dabb0c35f.html">Model</a></li><li class="navelem"><a class="el" href="dir_5ac382e795535087161f2a8b7f95a830.html">GroundWaterTransport</a></li><li class="navelem"><a class="el" href="gwt1apt1_8f90.html">gwt1apt1.f90</a></li>
-    <li class="footer">Generated on Wed Sep 14 2022 01:32:04 for MODFLOW 6 by
+    <li class="footer">Generated on Thu Sep 15 2022 23:20:01 for MODFLOW 6 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
