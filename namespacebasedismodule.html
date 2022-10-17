@@ -326,7 +326,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__allocate.html">mem_allocate</a>(this%nodesuser, <span class="stringliteral">&#39;NODESUSER&#39;</span>, this%memoryPath)</div>
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__allocate.html">mem_allocate</a>(this%ndim, <span class="stringliteral">&#39;NDIM&#39;</span>, this%memoryPath)</div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__allocate.html">mem_allocate</a>(this%icondir, <span class="stringliteral">&#39;ICONDIR&#39;</span>, this%memoryPath)</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__allocate.html">mem_allocate</a>(this%writegrb, <span class="stringliteral">&#39;WRITEGRB&#39;</span>, this%memoryPath)</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__allocate.html">mem_allocate</a>(this%nogrb, <span class="stringliteral">&#39;NOGRB&#39;</span>, this%memoryPath)</div>
 <div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__allocate.html">mem_allocate</a>(this%xorigin, <span class="stringliteral">&#39;XORIGIN&#39;</span>, this%memoryPath)</div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__allocate.html">mem_allocate</a>(this%yorigin, <span class="stringliteral">&#39;YORIGIN&#39;</span>, this%memoryPath)</div>
 <div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__allocate.html">mem_allocate</a>(this%angrot, <span class="stringliteral">&#39;ANGROT&#39;</span>, this%memoryPath)</div>
@@ -342,7 +342,7 @@ Functions/Subroutines</h2></td></tr>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    this%nodesuser = 0</div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    this%ndim = 1</div>
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    this%icondir = 1</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    this%writegrb = .true.</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    this%nogrb = 0</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    this%xorigin = dzero</div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    this%yorigin = dzero</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    this%angrot = dzero</div>
@@ -739,7 +739,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="keywordflow">      end if</span></div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="keywordflow">    end do</span></div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="comment">!</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordflow">if</span> (this%writegrb) <span class="keyword">call </span>this%write_grb(ict)</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordflow">if</span> (this%nogrb == 0) <span class="keyword">call </span>this%write_grb(ict)</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="comment">!</span></div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="comment">! -- Return</span></div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordflow">return</span></div>
@@ -793,7 +793,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__deallocate.html">mem_deallocate</a>(this%nodesuser)</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__deallocate.html">mem_deallocate</a>(this%ndim)</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__deallocate.html">mem_deallocate</a>(this%icondir)</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__deallocate.html">mem_deallocate</a>(this%writegrb)</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__deallocate.html">mem_deallocate</a>(this%nogrb)</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__deallocate.html">mem_deallocate</a>(this%xorigin)</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__deallocate.html">mem_deallocate</a>(this%yorigin)</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__deallocate.html">mem_deallocate</a>(this%angrot)</div>
@@ -4084,7 +4084,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacebasedismodule.html">basedismodule</a></li>
-    <li class="footer">Generated on Wed Oct 12 2022 18:02:49 for MODFLOW 6 by
+    <li class="footer">Generated on Mon Oct 17 2022 20:31:33 for MODFLOW 6 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
