@@ -1,6 +1,13 @@
 var hierarchy =
 [
     [ "tvbasemodule::ar_set_pointers", "interfacetvbasemodule_1_1ar__set__pointers.html", null ],
+    [ "arrayreaderbasemodule::arrayreaderbasetype", "structarrayreaderbasemodule_1_1arrayreaderbasetype.html", null ],
+    [ "arrayreaderbasetype", null, [
+      [ "double1dreadermodule::double1dreadertype", "structdouble1dreadermodule_1_1double1dreadertype.html", null ],
+      [ "double2dreadermodule::double2dreadertype", "structdouble2dreadermodule_1_1double2dreadertype.html", null ],
+      [ "integer1dreadermodule::integer1dreadertype", "structinteger1dreadermodule_1_1integer1dreadertype.html", null ],
+      [ "integer2dreadermodule::integer2dreadertype", "structinteger2dreadermodule_1_1integer2dreadertype.html", null ]
+    ] ],
     [ "basesolutionmodule::assignConnectionsIFace", "interfacebasesolutionmodule_1_1assign_connections_i_face.html", null ],
     [ "baseexchangemodule::baseexchangetype", "structbaseexchangemodule_1_1baseexchangetype.html", null ],
     [ "baseexchangetype", null, [
@@ -16,10 +23,10 @@ var hierarchy =
     [ "basemodeltype", null, [
       [ "numericalmodelmodule::numericalmodeltype", "structnumericalmodelmodule_1_1numericalmodeltype.html", null ]
     ] ],
-    [ "basesolutionmodule::basesolutiontype", "structbasesolutionmodule_1_1basesolutiontype.html", null ],
     [ "basesolutiontype", null, [
       [ "numericalsolutionmodule::numericalsolutiontype", "structnumericalsolutionmodule_1_1numericalsolutiontype.html", null ]
     ] ],
+    [ "basesolutionmodule::basesolutiontype", "structbasesolutionmodule_1_1basesolutiontype.html", null ],
     [ "blockparsermodule::blockparsertype", "structblockparsermodule_1_1blockparsertype.html", null ],
     [ "bmif::bmi", "structbmif_1_1bmi.html", null ],
     [ "bmif::bmif_finalize", "interfacebmif_1_1bmif__finalize.html", null ],
@@ -96,12 +103,12 @@ var hierarchy =
     [ "connectionsmodule::connectionstype", "structconnectionsmodule_1_1connectionstype.html", null ],
     [ "dag_module::dag", "structdag__module_1_1dag.html", null ],
     [ "gwtfmimodule::dataadvancedpackagetype", "structgwtfmimodule_1_1dataadvancedpackagetype.html", null ],
+    [ "basedismodule::disbasetype", "structbasedismodule_1_1disbasetype.html", null ],
     [ "disbasetype", null, [
       [ "gwfdismodule::gwfdistype", "structgwfdismodule_1_1gwfdistype.html", null ],
       [ "gwfdisumodule::gwfdisutype", "structgwfdisumodule_1_1gwfdisutype.html", null ],
       [ "gwfdisvmodule::gwfdisvtype", "structgwfdisvmodule_1_1gwfdisvtype.html", null ]
     ] ],
-    [ "basedismodule::disbasetype", "structbasedismodule_1_1disbasetype.html", null ],
     [ "disconnexchangetype", null, [
       [ "gwfgwfexchangemodule::gwfexchangetype", "structgwfgwfexchangemodule_1_1gwfexchangetype.html", null ],
       [ "gwtgwtexchangemodule::gwtexchangetype", "structgwtgwtexchangemodule_1_1gwtexchangetype.html", null ]
@@ -160,8 +167,8 @@ var hierarchy =
     [ "hashtablemodule::listdatatype", "structhashtablemodule_1_1listdatatype.html", null ],
     [ "listmodule::listnodetype", "structlistmodule_1_1listnodetype.html", null ],
     [ "listreadermodule::listreadertype", "structlistreadermodule_1_1listreadertype.html", null ],
-    [ "listmodule::listtype", "structlistmodule_1_1listtype.html", null ],
     [ "hashtablemodule::listtype", "structhashtablemodule_1_1listtype.html", null ],
+    [ "listmodule::listtype", "structlistmodule_1_1listtype.html", null ],
     [ "mappedvariablemodule::mappedvariabletype", "structmappedvariablemodule_1_1mappedvariabletype.html", null ],
     [ "memorymanagermodule::mem_allocate", "interfacememorymanagermodule_1_1mem__allocate.html", null ],
     [ "memorymanagermodule::mem_checkin", "interfacememorymanagermodule_1_1mem__checkin.html", null ],
@@ -209,17 +216,17 @@ var hierarchy =
     [ "observemodule::observetype", "structobservemodule_1_1observetype.html", null ],
     [ "obsoutputlistmodule::obsoutputlisttype", "structobsoutputlistmodule_1_1obsoutputlisttype.html", null ],
     [ "obsoutputmodule::obsoutputtype", "structobsoutputmodule_1_1obsoutputtype.html", null ],
-    [ "obsmodule::obstype", "structobsmodule_1_1obstype.html", null ],
     [ "obstype", null, [
       [ "gwfobsmodule::gwfobstype", "structgwfobsmodule_1_1gwfobstype.html", null ],
       [ "gwtobsmodule::gwtobstype", "structgwtobsmodule_1_1gwtobstype.html", null ]
     ] ],
+    [ "obsmodule::obstype", "structobsmodule_1_1obstype.html", null ],
     [ "outputcontroldatamodule::outputcontroldatatype", "structoutputcontroldatamodule_1_1outputcontroldatatype.html", null ],
+    [ "outputcontrolmodule::outputcontroltype", "structoutputcontrolmodule_1_1outputcontroltype.html", null ],
     [ "outputcontroltype", null, [
       [ "gwfocmodule::gwfoctype", "structgwfocmodule_1_1gwfoctype.html", null ],
       [ "gwtocmodule::gwtoctype", "structgwtocmodule_1_1gwtoctype.html", null ]
     ] ],
-    [ "outputcontrolmodule::outputcontroltype", "structoutputcontrolmodule_1_1outputcontroltype.html", null ],
     [ "packagebudgetmodule::packagebudgettype", "structpackagebudgetmodule_1_1packagebudgettype.html", null ],
     [ "idmmf6fileloadermodule::packageload", "structidmmf6fileloadermodule_1_1packageload.html", null ],
     [ "packagemovermodule::packagemovertype", "structpackagemovermodule_1_1packagemovertype.html", null ],
@@ -308,6 +315,7 @@ var hierarchy =
     [ "apt_process_obsID", null, null ],
     [ "apt_process_obsID12", null, null ],
     [ "arePointersEqual", null, null ],
+    [ "ArrayReaderBaseType", null, null ],
     [ "ats_cr", null, null ],
     [ "ats_da", null, null ],
     [ "ats_period_message", null, null ],
@@ -736,6 +744,17 @@ var hierarchy =
     [ "quickSortGrid", null, null ],
     [ "rate_accumulator", null, null ],
     [ "rch_create", null, null ],
+    [ "read_binary_header", null, null ],
+    [ "read_dbl1d", null, null ],
+    [ "read_dbl1d_layered", null, null ],
+    [ "read_dbl2d", null, null ],
+    [ "read_dbl2d_layered", null, null ],
+    [ "read_dbl3d_layered", null, null ],
+    [ "read_int1d", null, null ],
+    [ "read_int1d_layered", null, null ],
+    [ "read_int2d", null, null ],
+    [ "read_int2d_layered", null, null ],
+    [ "read_int3d_layered", null, null ],
     [ "read_value_or_time_series", null, null ],
     [ "read_value_or_time_series_adv", null, null ],
     [ "ReadArray", null, null ],
@@ -846,8 +865,8 @@ var hierarchy =
     [ "ulstlb", null, null ],
     [ "UNDEFINED", null, null ],
     [ "unique_values", null, null ],
-    [ "upcase", null, null ],
     [ "UPCASE", null, null ],
+    [ "upcase", null, null ],
     [ "urdaux", null, null ],
     [ "urword", null, null ],
     [ "URWORD", null, null ],

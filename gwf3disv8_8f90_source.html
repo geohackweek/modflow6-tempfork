@@ -141,9 +141,9 @@ $(document).ready(function(){initNavTree('gwf3disv8_8f90_source.html',''); initR
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structgwfdisvmodule_1_1gwfdisvtype.html#a9b63844e98e0779cd785f7e7991f1d5c">   26</a></span>&#160;<span class="keywordtype">    real</span>(dp), <span class="keywordtype">dimension(:, :)</span>, <span class="keywordtype">pointer</span>, <span class="keywordtype">contiguous</span> :: cellxy =&gt; null() <span class="comment">! cell center stored as 2d array of x and y</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structgwfdisvmodule_1_1gwfdisvtype.html#af188d4909c95a8d23bd10ed947ee94ff">   27</a></span>&#160;    <span class="keywordtype">integer(I4B)</span>, <span class="keywordtype">dimension(:)</span>, <span class="keywordtype">pointer</span>, <span class="keywordtype">contiguous</span> :: iavert =&gt; null() <span class="comment">! cell vertex pointer ia array</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structgwfdisvmodule_1_1gwfdisvtype.html#afa650821a5076ad4c25cf4586a6737e5">   28</a></span>&#160;    <span class="keywordtype">integer(I4B)</span>, <span class="keywordtype">dimension(:)</span>, <span class="keywordtype">pointer</span>, <span class="keywordtype">contiguous</span> :: javert =&gt; null() <span class="comment">! cell vertex pointer ja array</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structgwfdisvmodule_1_1gwfdisvtype.html#ac05f2d7cc4ead9f7d2b208a112722928">   29</a></span>&#160;<span class="keywordtype">    real</span>(dp), <span class="keywordtype">dimension(:, :)</span>, <span class="keywordtype">pointer</span>, <span class="keywordtype">contiguous</span> :: top2d =&gt; null() <span class="comment">! top elevations for each cell at top of model (ncpl, 1)</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structgwfdisvmodule_1_1gwfdisvtype.html#a3ec2ecd66bab74eaa8ff921c6b2f4e5a">   30</a></span>&#160;<span class="keywordtype">    real</span>(dp), <span class="keywordtype">dimension(:, :, :)</span>, <span class="keywordtype">pointer</span>, <span class="keywordtype">contiguous</span> :: bot3d =&gt; null() <span class="comment">! bottom elevations for each cell (ncpl, 1, nlay)</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structgwfdisvmodule_1_1gwfdisvtype.html#a4099c2d4fdfe5cf043f82cef3bda3eb0">   31</a></span>&#160;    <span class="keywordtype">integer(I4B)</span>, <span class="keywordtype">dimension(:, :, :)</span>, <span class="keywordtype">pointer</span>, <span class="keywordtype">contiguous</span> :: idomain =&gt; null() <span class="comment">! idomain (ncpl, 1, nlay)</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structgwfdisvmodule_1_1gwfdisvtype.html#ac0bb6fea8865b457b65b4f1fa25e7ae8">   29</a></span>&#160;<span class="keywordtype">    real</span>(dp), <span class="keywordtype">dimension(:)</span>, <span class="keywordtype">pointer</span>, <span class="keywordtype">contiguous</span> :: top1d =&gt; null() <span class="comment">! top elevations for each cell at top of model (ncpl)</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structgwfdisvmodule_1_1gwfdisvtype.html#aafb65c7cee7b14dbcbdbac39d5baa8e5">   30</a></span>&#160;<span class="keywordtype">    real</span>(dp), <span class="keywordtype">dimension(:, :)</span>, <span class="keywordtype">pointer</span>, <span class="keywordtype">contiguous</span> :: bot2d =&gt; null() <span class="comment">! bottom elevations for each cell (ncpl, nlay)</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structgwfdisvmodule_1_1gwfdisvtype.html#a9902b555fedeb2060e42679b57570c5f">   31</a></span>&#160;    <span class="keywordtype">integer(I4B)</span>, <span class="keywordtype">dimension(:, :)</span>, <span class="keywordtype">pointer</span>, <span class="keywordtype">contiguous</span> :: idomain =&gt; null() <span class="comment">! idomain (ncpl, nlay)</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">contains</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structgwfdisvmodule_1_1gwfdisvtype.html#a9c72be26cdfd509b0e26e1b28b702e9d">   33</a></span>&#160;    <span class="keywordtype">procedure</span> :: dis_df =&gt; <a class="code" href="namespacegwfdisvmodule.html#a9a88426afbe7229bf7a9099d81486f48">disv_df</a></div>
 <div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structgwfdisvmodule_1_1gwfdisvtype.html#aaa966a290a3579159a74a1f572cc4696">   34</a></span>&#160;    <span class="keywordtype">procedure</span> :: dis_da =&gt; <a class="code" href="namespacegwfdisvmodule.html#af5af5f1c17c4e8a8a52c08def2b49b29">disv_da</a></div>
@@ -315,8 +315,8 @@ $(document).ready(function(){initNavTree('gwf3disv8_8f90_source.html',''); initR
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__deallocate.html">mem_deallocate</a>(this%cellxy)</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__deallocate.html">mem_deallocate</a>(this%iavert)</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__deallocate.html">mem_deallocate</a>(this%javert)</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__deallocate.html">mem_deallocate</a>(this%top2d)</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__deallocate.html">mem_deallocate</a>(this%bot3d)</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__deallocate.html">mem_deallocate</a>(this%top1d)</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__deallocate.html">mem_deallocate</a>(this%bot2d)</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__deallocate.html">mem_deallocate</a>(this%idomain)</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="comment">!</span></div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="comment">! -- Return</span></div>
@@ -453,10 +453,10 @@ $(document).ready(function(){initNavTree('gwf3disv8_8f90_source.html',''); initR
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    this%nodesuser = this%nlay * this%ncpl</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="comment">!</span></div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="comment">! -- Allocate non-reduced vectors for disv</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__allocate.html">mem_allocate</a>(this%idomain, this%ncpl, 1, this%nlay, <span class="stringliteral">&#39;IDOMAIN&#39;</span>, &amp;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__allocate.html">mem_allocate</a>(this%idomain, this%ncpl, this%nlay, <span class="stringliteral">&#39;IDOMAIN&#39;</span>, &amp;</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                      this%memoryPath)</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__allocate.html">mem_allocate</a>(this%top2d, this%ncpl, 1, <span class="stringliteral">&#39;TOP2D&#39;</span>, this%memoryPath)</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__allocate.html">mem_allocate</a>(this%bot3d, this%ncpl, 1, this%nlay, <span class="stringliteral">&#39;BOT3D&#39;</span>, &amp;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__allocate.html">mem_allocate</a>(this%top1d, this%ncpl, <span class="stringliteral">&#39;TOP1D&#39;</span>, this%memoryPath)</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagermodule_1_1mem__allocate.html">mem_allocate</a>(this%bot2d, this%ncpl, this%nlay, <span class="stringliteral">&#39;BOT2D&#39;</span>, &amp;</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                      this%memoryPath)</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="comment">!</span></div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="comment">! -- Allocate vertices array</span></div>
@@ -466,7 +466,7 @@ $(document).ready(function(){initNavTree('gwf3disv8_8f90_source.html',''); initR
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="comment">! -- initialize all cells to be active (idomain = 1)</span></div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordflow">do</span> k = 1, this%nlay</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;      <span class="keywordflow">do</span> j = 1, this%ncpl</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        this%idomain(j, 1, k) = 1</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        this%idomain(j, k) = 1</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="keywordflow">      end do</span></div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="keywordflow">    end do</span></div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="comment">!</span></div>
@@ -520,8 +520,8 @@ $(document).ready(function(){initNavTree('gwf3disv8_8f90_source.html',''); initR
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    idmmemorypath = <a class="code" href="namespacememoryhelpermodule.html#abe77d18fe02d108d80f414f9fafa592d">create_mem_path</a>(this%name_model, <span class="stringliteral">&#39;DISV&#39;</span>, <a class="code" href="namespacesimvariablesmodule.html#a0e55ae4b9ba5c5e221b5601ead6e7db1">idm_context</a>)</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="comment">!</span></div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <span class="comment">! -- update defaults with idm sourced values</span></div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagerextmodule_1_1mem__set__value.html">mem_set_value</a>(this%top2d, <span class="stringliteral">&#39;TOP&#39;</span>, idmmemorypath, afound(1))</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagerextmodule_1_1mem__set__value.html">mem_set_value</a>(this%bot3d, <span class="stringliteral">&#39;BOTM&#39;</span>, idmmemorypath, afound(2))</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagerextmodule_1_1mem__set__value.html">mem_set_value</a>(this%top1d, <span class="stringliteral">&#39;TOP&#39;</span>, idmmemorypath, afound(1))</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagerextmodule_1_1mem__set__value.html">mem_set_value</a>(this%bot2d, <span class="stringliteral">&#39;BOTM&#39;</span>, idmmemorypath, afound(2))</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    <span class="keyword">call </span><a class="code" href="interfacememorymanagerextmodule_1_1mem__set__value.html">mem_set_value</a>(this%idomain, <span class="stringliteral">&#39;IDOMAIN&#39;</span>, idmmemorypath, afound(3))</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="comment">!</span></div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    <span class="comment">! -- log simulation values</span></div>
@@ -587,7 +587,7 @@ $(document).ready(function(){initNavTree('gwf3disv8_8f90_source.html',''); initR
 <div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    this%nodes = 0</div>
 <div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    <span class="keywordflow">do</span> k = 1, this%nlay</div>
 <div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;      <span class="keywordflow">do</span> j = 1, this%ncpl</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;        <span class="keywordflow">if</span> (this%idomain(j, 1, k) &gt; 0) this%nodes = this%nodes + 1</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;        <span class="keywordflow">if</span> (this%idomain(j, k) &gt; 0) this%nodes = this%nodes + 1</div>
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;<span class="keywordflow">      end do</span></div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;<span class="keywordflow">    end do</span></div>
 <div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    <span class="comment">!</span></div>
@@ -602,16 +602,16 @@ $(document).ready(function(){initNavTree('gwf3disv8_8f90_source.html',''); initR
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    <span class="comment">! -- Check cell thicknesses</span></div>
 <div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    <span class="keywordflow">do</span> k = 1, this%nlay</div>
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;      <span class="keywordflow">do</span> j = 1, this%ncpl</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        <span class="keywordflow">if</span> (this%idomain(j, 1, k) == 0) cycle</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;        <span class="keywordflow">if</span> (this%idomain(j, 1, k) &gt; 0) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;        <span class="keywordflow">if</span> (this%idomain(j, k) == 0) cycle</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;        <span class="keywordflow">if</span> (this%idomain(j, k) &gt; 0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;          <span class="keywordflow">if</span> (k &gt; 1) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;            top = this%bot3d(j, 1, k - 1)</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;            top = this%bot2d(j, k - 1)</div>
 <div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;          <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;            top = this%top2d(j, 1)</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;            top = this%top1d(j)</div>
 <div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;<span class="keywordflow">          end if</span></div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;          dz = top - this%bot3d(j, 1, k)</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;          dz = top - this%bot2d(j, k)</div>
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;          <span class="keywordflow">if</span> (dz &lt;= <a class="code" href="namespaceconstantsmodule.html#abab5757666b9ddd2726c20ce48dd0050">dzero</a>) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;            <span class="keyword">write</span> (ermsg, fmt=fmtdz) k, j, top, this%bot3d(j, 1, k)</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;            <span class="keyword">write</span> (ermsg, fmt=fmtdz) k, j, top, this%bot2d(j, k)</div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;            <span class="keyword">call </span><a class="code" href="namespacesimmodule.html#a21870712a1166225fdcd5b60bffb353e">store_error</a>(ermsg)</div>
 <div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;<span class="keywordflow">          end if</span></div>
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;<span class="keywordflow">        end if</span></div>
@@ -638,10 +638,10 @@ $(document).ready(function(){initNavTree('gwf3disv8_8f90_source.html',''); initR
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;      noder = 1</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;      <span class="keywordflow">do</span> k = 1, this%nlay</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;        <span class="keywordflow">do</span> j = 1, this%ncpl</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;          <span class="keywordflow">if</span> (this%idomain(j, 1, k) &gt; 0) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;          <span class="keywordflow">if</span> (this%idomain(j, k) &gt; 0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;            this%nodereduced(node) = noder</div>
 <div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;            noder = noder + 1</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;          <span class="keywordflow">elseif</span> (this%idomain(j, 1, k) &lt; 0) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;          <span class="keywordflow">elseif</span> (this%idomain(j, k) &lt; 0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;            this%nodereduced(node) = -1</div>
 <div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;          <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;            this%nodereduced(node) = 0</div>
@@ -657,7 +657,7 @@ $(document).ready(function(){initNavTree('gwf3disv8_8f90_source.html',''); initR
 <div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;      noder = 1</div>
 <div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;      <span class="keywordflow">do</span> k = 1, this%nlay</div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;        <span class="keywordflow">do</span> j = 1, this%ncpl</div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;          <span class="keywordflow">if</span> (this%idomain(j, 1, k) &gt; 0) <span class="keywordflow">then</span></div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;          <span class="keywordflow">if</span> (this%idomain(j, k) &gt; 0) <span class="keywordflow">then</span></div>
 <div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;            this%nodeuser(noder) = node</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;            noder = noder + 1</div>
 <div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;<span class="keywordflow">          end if</span></div>
@@ -666,7 +666,7 @@ $(document).ready(function(){initNavTree('gwf3disv8_8f90_source.html',''); initR
 <div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;<span class="keywordflow">      end do</span></div>
 <div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;<span class="keywordflow">    end if</span></div>
 <div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    <span class="comment">!</span></div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;    <span class="comment">! -- Move top2d and bot3d into top and bot</span></div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;    <span class="comment">! -- Move top1d and bot2d into top and bot</span></div>
 <div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    <span class="comment">!    and set x and y center coordinates</span></div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;    node = 0</div>
 <div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;    <span class="keywordflow">do</span> k = 1, this%nlay</div>
@@ -676,12 +676,12 @@ $(document).ready(function(){initNavTree('gwf3disv8_8f90_source.html',''); initR
 <div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;        <span class="keywordflow">if</span> (this%nodes &lt; this%nodesuser) noder = this%nodereduced(node)</div>
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;        <span class="keywordflow">if</span> (noder &lt;= 0) cycle</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;        <span class="keywordflow">if</span> (k &gt; 1) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;          top = this%bot3d(j, 1, k - 1)</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;          top = this%bot2d(j, k - 1)</div>
 <div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;          top = this%top2d(j, 1)</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;          top = this%top1d(j)</div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;<span class="keywordflow">        end if</span></div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;        this%top(noder) = top</div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;        this%bot(noder) = this%bot3d(j, 1, k)</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;        this%bot(noder) = this%bot2d(j, k)</div>
 <div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;        this%xc(noder) = this%cellxy(1, j)</div>
 <div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;        this%yc(noder) = this%cellxy(2, j)</div>
 <div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;<span class="keywordflow">      end do</span></div>
@@ -1052,8 +1052,8 @@ $(document).ready(function(){initNavTree('gwf3disv8_8f90_source.html',''); initR
 <div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;    <span class="keyword">write</span> (iunit) this%xorigin <span class="comment">! xorigin</span></div>
 <div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;    <span class="keyword">write</span> (iunit) this%yorigin <span class="comment">! yorigin</span></div>
 <div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;    <span class="keyword">write</span> (iunit) this%angrot <span class="comment">! angrot</span></div>
-<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;    <span class="keyword">write</span> (iunit) this%top2d <span class="comment">! top</span></div>
-<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;    <span class="keyword">write</span> (iunit) this%bot3d <span class="comment">! botm</span></div>
+<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;    <span class="keyword">write</span> (iunit) this%top1d <span class="comment">! top</span></div>
+<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;    <span class="keyword">write</span> (iunit) this%bot2d <span class="comment">! botm</span></div>
 <div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;    <span class="keyword">write</span> (iunit) this%vertices <span class="comment">! vertices</span></div>
 <div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;    <span class="keyword">write</span> (iunit) (this%cellxy(1, i), i=1, this%ncpl) <span class="comment">! cellx</span></div>
 <div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;    <span class="keyword">write</span> (iunit) (this%cellxy(2, i), i=1, this%ncpl) <span class="comment">! celly</span></div>
@@ -2154,7 +2154,7 @@ $(document).ready(function(){initNavTree('gwf3disv8_8f90_source.html',''); initR
 <div class="ttc" id="anamespacegwfdisvmodule_html_abac14a6439229ad3405d828e2bfa4432"><div class="ttname"><a href="namespacegwfdisvmodule.html#abac14a6439229ad3405d828e2bfa4432">gwfdisvmodule::nodeu_from_string</a></div><div class="ttdeci">integer(i4b) function nodeu_from_string(this, lloc, istart, istop, in, iout, line, flag_string, allow_zero)</div><div class="ttdef"><b>Definition:</b> <a href="gwf3disv8_8f90_source.html#l01381">gwf3disv8.f90:1381</a></div></div>
 <div class="ttc" id="anamespacegwfdisvmodule_html_a9a88426afbe7229bf7a9099d81486f48"><div class="ttname"><a href="namespacegwfdisvmodule.html#a9a88426afbe7229bf7a9099d81486f48">gwfdisvmodule::disv_df</a></div><div class="ttdeci">subroutine disv_df(this)</div><div class="ttdef"><b>Definition:</b> <a href="gwf3disv8_8f90_source.html#l00148">gwf3disv8.f90:148</a></div></div>
 <div class="ttc" id="anamespacetdismodule_html_a011f43ae7ec20b725b0092529bda2b73"><div class="ttname"><a href="namespacetdismodule.html#a011f43ae7ec20b725b0092529bda2b73">tdismodule::pertim</a></div><div class="ttdeci">real(dp), pointer, public pertim</div><div class="ttdoc">time relative to start of stress period</div><div class="ttdef"><b>Definition:</b> <a href="tdis_8f90_source.html#l00031">tdis.f90:31</a></div></div>
-<div class="ttc" id="ainterfacearrayreadersmodule_1_1readarray_html"><div class="ttname"><a href="interfacearrayreadersmodule_1_1readarray.html">arrayreadersmodule::readarray</a></div><div class="ttdef"><b>Definition:</b> <a href="_array_readers_8f90_source.html#l00018">ArrayReaders.f90:18</a></div></div>
+<div class="ttc" id="ainterfacearrayreadersmodule_1_1readarray_html"><div class="ttname"><a href="interfacearrayreadersmodule_1_1readarray.html">arrayreadersmodule::readarray</a></div><div class="ttdef"><b>Definition:</b> <a href="_array_readers_8f90_source.html#l00019">ArrayReaders.f90:19</a></div></div>
 <div class="ttc" id="anamespacesimvariablesmodule_html"><div class="ttname"><a href="namespacesimvariablesmodule.html">simvariablesmodule</a></div><div class="ttdoc">This module contains simulation variables.</div><div class="ttdef"><b>Definition:</b> <a href="_sim_variables_8f90_source.html#l00009">SimVariables.f90:9</a></div></div>
 <div class="ttc" id="anamespacegwfdisvmodule_html_a34be39910f2ea98503e299531ab27542"><div class="ttname"><a href="namespacegwfdisvmodule.html#a34be39910f2ea98503e299531ab27542">gwfdisvmodule::disv_cr</a></div><div class="ttdeci">subroutine, public disv_cr(dis, name_model, inunit, iout)</div><div class="ttdef"><b>Definition:</b> <a href="gwf3disv8_8f90_source.html#l00077">gwf3disv8.f90:77</a></div></div>
 <div class="ttc" id="anamespacegwfdisvmodule_html_a3715d737b05f674e1289534147dd580c"><div class="ttname"><a href="namespacegwfdisvmodule.html#a3715d737b05f674e1289534147dd580c">gwfdisvmodule::record_array</a></div><div class="ttdeci">subroutine record_array(this, darray, iout, iprint, idataun, aname, cdatafmp, nvaluesp, nwidthp, editdesc, dinact)</div><div class="ttdef"><b>Definition:</b> <a href="gwf3disv8_8f90_source.html#l01769">gwf3disv8.f90:1769</a></div></div>
@@ -2202,7 +2202,7 @@ $(document).ready(function(){initNavTree('gwf3disv8_8f90_source.html',''); initR
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_32e188284d239da8bb14ec1dabb0c35f.html">Model</a></li><li class="navelem"><a class="el" href="dir_5aefb7a434fc869900e7ccf685166f81.html">GroundWaterFlow</a></li><li class="navelem"><a class="el" href="gwf3disv8_8f90.html">gwf3disv8.f90</a></li>
-    <li class="footer">Generated on Mon Oct 17 2022 20:31:32 for MODFLOW 6 by
+    <li class="footer">Generated on Fri Oct 28 2022 21:50:24 for MODFLOW 6 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>

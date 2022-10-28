@@ -160,6 +160,9 @@ Functions/Subroutines</h2></td></tr>
 <tr class="memitem:a379d88fde8b32b156962aee62fa760e4"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceloadmf6filetypemodule.html#a379d88fde8b32b156962aee62fa760e4">loadmf6filetypemodule::load_integer1d_type</a> (parser, idt, memoryPath, mshape, iout)</td></tr>
 <tr class="memdesc:a379d88fde8b32b156962aee62fa760e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">load type 1d integer  <a href="namespaceloadmf6filetypemodule.html#a379d88fde8b32b156962aee62fa760e4">More...</a><br /></td></tr>
 <tr class="separator:a379d88fde8b32b156962aee62fa760e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50c45228fbaa4aa631081494b9dafdca"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceloadmf6filetypemodule.html#a50c45228fbaa4aa631081494b9dafdca">loadmf6filetypemodule::load_integer2d_type</a> (parser, idt, memoryPath, mshape, iout)</td></tr>
+<tr class="memdesc:a50c45228fbaa4aa631081494b9dafdca"><td class="mdescLeft">&#160;</td><td class="mdescRight">load type 2d integer  <a href="namespaceloadmf6filetypemodule.html#a50c45228fbaa4aa631081494b9dafdca">More...</a><br /></td></tr>
+<tr class="separator:a50c45228fbaa4aa631081494b9dafdca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47010583dff4a200c99919d07977dd9b"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceloadmf6filetypemodule.html#a47010583dff4a200c99919d07977dd9b">loadmf6filetypemodule::load_integer3d_type</a> (parser, idt, memoryPath, mshape, iout)</td></tr>
 <tr class="memdesc:a47010583dff4a200c99919d07977dd9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">load type 3d integer  <a href="namespaceloadmf6filetypemodule.html#a47010583dff4a200c99919d07977dd9b">More...</a><br /></td></tr>
 <tr class="separator:a47010583dff4a200c99919d07977dd9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -178,9 +181,10 @@ Functions/Subroutines</h2></td></tr>
 <tr class="memitem:af8bd63043633225e1d1b5e76592e778c"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceloadmf6filetypemodule.html#af8bd63043633225e1d1b5e76592e778c">loadmf6filetypemodule::set_model_shape</a> (ftype, model_mempath, dis_mempath, model_shape)</td></tr>
 <tr class="memdesc:af8bd63043633225e1d1b5e76592e778c"><td class="mdescLeft">&#160;</td><td class="mdescRight">routine for setting the model shape  <a href="namespaceloadmf6filetypemodule.html#af8bd63043633225e1d1b5e76592e778c">More...</a><br /></td></tr>
 <tr class="separator:af8bd63043633225e1d1b5e76592e778c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a613745c60accabce61ce5a7538cefae2"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceloadmf6filetypemodule.html#a613745c60accabce61ce5a7538cefae2">loadmf6filetypemodule::read_grid_array</a> (parser, mshape, array_name, layered, dblarray, intarray)</td></tr>
-<tr class="memdesc:a613745c60accabce61ce5a7538cefae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">read an array that is the size of the model grid  <a href="namespaceloadmf6filetypemodule.html#a613745c60accabce61ce5a7538cefae2">More...</a><br /></td></tr>
-<tr class="separator:a613745c60accabce61ce5a7538cefae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a807ce05bf7824404ea8b028bbd4381d8"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceloadmf6filetypemodule.html#a807ce05bf7824404ea8b028bbd4381d8">loadmf6filetypemodule::get_layered_shape</a> (mshape, nlay, layer_shape)</td></tr>
+<tr class="separator:a807ce05bf7824404ea8b028bbd4381d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c3cf3591c9f724af17ffe7a1517ad54"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceloadmf6filetypemodule.html#a2c3cf3591c9f724af17ffe7a1517ad54">loadmf6filetypemodule::get_shape_from_string</a> (shape_string, array_shape, memoryPath)</td></tr>
+<tr class="separator:a2c3cf3591c9f724af17ffe7a1517ad54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -188,7 +192,7 @@ Functions/Subroutines</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ff383ddf1aa4eab0c4ce7910366d05a5.html">Utilities</a></li><li class="navelem"><a class="el" href="dir_e928979709fe2fa453a43ff0cf89a4ed.html">Idm</a></li><li class="navelem"><a class="el" href="_load_mf6_file_type_8f90.html">LoadMf6FileType.f90</a></li>
-    <li class="footer">Generated on Mon Oct 17 2022 20:31:33 for MODFLOW 6 by
+    <li class="footer">Generated on Fri Oct 28 2022 21:50:25 for MODFLOW 6 by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
