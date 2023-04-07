@@ -28,6 +28,7 @@ var hierarchy =
       [ "rectangulargeometrymodule::rectangulargeometrytype", "structrectangulargeometrymodule_1_1rectangulargeometrytype.html", null ]
     ] ],
     [ "basemodelmodule::basemodeltype", "structbasemodelmodule_1_1basemodeltype.html", [
+      [ "explicitmodelmodule::explicitmodeltype", "structexplicitmodelmodule_1_1explicitmodeltype.html", null ],
       [ "numericalmodelmodule::numericalmodeltype", "structnumericalmodelmodule_1_1numericalmodeltype.html", [
         [ "gwfmodule::gwfmodeltype", "structgwfmodule_1_1gwfmodeltype.html", [
           [ "gwfinterfacemodelmodule::gwfinterfacemodeltype", "structgwfinterfacemodelmodule_1_1gwfinterfacemodeltype.html", null ]
@@ -40,6 +41,7 @@ var hierarchy =
       ] ]
     ] ],
     [ "basesolutionmodule::basesolutiontype", "structbasesolutionmodule_1_1basesolutiontype.html", [
+      [ "explicitsolutionmodule::explicitsolutiontype", "structexplicitsolutionmodule_1_1explicitsolutiontype.html", null ],
       [ "numericalsolutionmodule::numericalsolutiontype", "structnumericalsolutionmodule_1_1numericalsolutiontype.html", [
         [ "parallelsolutionmodule::parallelsolutiontype", "structparallelsolutionmodule_1_1parallelsolutiontype.html", null ]
       ] ]
@@ -145,12 +147,17 @@ var hierarchy =
     [ "gwfdisuinputmodule::gwfdisuparamfoundtype", "structgwfdisuinputmodule_1_1gwfdisuparamfoundtype.html", null ],
     [ "gwfdisvinputmodule::gwfdisvparamfoundtype", "structgwfdisvinputmodule_1_1gwfdisvparamfoundtype.html", null ],
     [ "gwfmvrperioddatamodule::gwfmvrperioddatatype", "structgwfmvrperioddatamodule_1_1gwfmvrperioddatatype.html", null ],
+    [ "gwfnaminputmodule::gwfnamparamfoundtype", "structgwfnaminputmodule_1_1gwfnamparamfoundtype.html", null ],
     [ "gwfnpfoptionsmodule::gwfnpfoptionstype", "structgwfnpfoptionsmodule_1_1gwfnpfoptionstype.html", null ],
     [ "gwfnpfinputmodule::gwfnpfparamfoundtype", "structgwfnpfinputmodule_1_1gwfnpfparamfoundtype.html", null ],
     [ "gwfvscinputdatamodule::gwfvscinputdatatype", "structgwfvscinputdatamodule_1_1gwfvscinputdatatype.html", null ],
     [ "gwtadvoptionsmodule::gwtadvoptionstype", "structgwtadvoptionsmodule_1_1gwtadvoptionstype.html", null ],
+    [ "gwtdisinputmodule::gwtdisparamfoundtype", "structgwtdisinputmodule_1_1gwtdisparamfoundtype.html", null ],
+    [ "gwtdisuinputmodule::gwtdisuparamfoundtype", "structgwtdisuinputmodule_1_1gwtdisuparamfoundtype.html", null ],
+    [ "gwtdisvinputmodule::gwtdisvparamfoundtype", "structgwtdisvinputmodule_1_1gwtdisvparamfoundtype.html", null ],
     [ "gwtdspoptionsmodule::gwtdspoptionstype", "structgwtdspoptionsmodule_1_1gwtdspoptionstype.html", null ],
     [ "gwtdspinputmodule::gwtdspparamfoundtype", "structgwtdspinputmodule_1_1gwtdspparamfoundtype.html", null ],
+    [ "gwtnaminputmodule::gwtnamparamfoundtype", "structgwtnaminputmodule_1_1gwtnamparamfoundtype.html", null ],
     [ "gwtspcmodule::gwtspctype", "structgwtspcmodule_1_1gwtspctype.html", null ],
     [ "hashtablemodule::hashlisttype", "structhashtablemodule_1_1hashlisttype.html", null ],
     [ "hashtablemodule::hashtabletype", "structhashtablemodule_1_1hashtabletype.html", null ],
@@ -166,7 +173,7 @@ var hierarchy =
     [ "inputdefinitionmodule::inputblockdefinitiontype", "structinputdefinitionmodule_1_1inputblockdefinitiontype.html", null ],
     [ "inputdefinitionmodule::inputparamdefinitiontype", "structinputdefinitionmodule_1_1inputparamdefinitiontype.html", null ],
     [ "interfacemapmodule::interfacemaptype", "structinterfacemapmodule_1_1interfacemaptype.html", null ],
-    [ "idmmf6fileloadermodule::IPackageLoad", "interfaceidmmf6fileloadermodule_1_1_i_package_load.html", null ],
+    [ "idmmf6filemodule::IPackageLoad", "interfaceidmmf6filemodule_1_1_i_package_load.html", null ],
     [ "listmodule::isEqualIface", "interfacelistmodule_1_1is_equal_iface.html", null ],
     [ "iunitmodule::iunitrowtype", "structiunitmodule_1_1iunitrowtype.html", null ],
     [ "iunitmodule::iunittype", "structiunitmodule_1_1iunittype.html", null ],
@@ -180,6 +187,7 @@ var hierarchy =
     [ "listreadermodule::listreadertype", "structlistreadermodule_1_1listreadertype.html", null ],
     [ "hashtablemodule::listtype", "structhashtablemodule_1_1listtype.html", null ],
     [ "listmodule::listtype", "structlistmodule_1_1listtype.html", null ],
+    [ "modelpackageinputsmodule::loadablepackagetype", "structmodelpackageinputsmodule_1_1loadablepackagetype.html", null ],
     [ "mappedmemorymodule::mappedmemorytype", "structmappedmemorymodule_1_1mappedmemorytype.html", null ],
     [ "mappermodule::mappertype", "structmappermodule_1_1mappertype.html", null ],
     [ "matrixbasemodule::matrixbasetype", "structmatrixbasemodule_1_1matrixbasetype.html", [
@@ -197,11 +205,11 @@ var hierarchy =
     [ "memorylistmodule::memorylisttype", "structmemorylistmodule_1_1memorylisttype.html", null ],
     [ "memorytypemodule::memorytype", "structmemorytypemodule_1_1memorytype.html", null ],
     [ "messagemodule::messagetype", "structmessagemodule_1_1messagetype.html", null ],
+    [ "modelpackageinputsmodule::modelpackageinputstype", "structmodelpackageinputsmodule_1_1modelpackageinputstype.html", null ],
     [ "modflowinputmodule::modflowinputtype", "structmodflowinputmodule_1_1modflowinputtype.html", null ],
     [ "mpimessagebuildermodule::mpimessagebuildertype", "structmpimessagebuildermodule_1_1mpimessagebuildertype.html", null ],
     [ "mpiworldmodule::mpiworldtype", "structmpiworldmodule_1_1mpiworldtype.html", null ],
     [ "mvrmodule::mvrtype", "structmvrmodule_1_1mvrtype.html", null ],
-    [ "namefilemodule::namefiletype", "structnamefilemodule_1_1namefiletype.html", null ],
     [ "numericalpackagemodule::numericalpackagetype", "structnumericalpackagemodule_1_1numericalpackagetype.html", [
       [ "bndmodule::bndtype", "structbndmodule_1_1bndtype.html", [
         [ "apimodule::apitype", "structapimodule_1_1apitype.html", null ],
@@ -263,7 +271,7 @@ var hierarchy =
       [ "gwtocmodule::gwtoctype", "structgwtocmodule_1_1gwtoctype.html", null ]
     ] ],
     [ "packagebudgetmodule::packagebudgettype", "structpackagebudgetmodule_1_1packagebudgettype.html", null ],
-    [ "idmmf6fileloadermodule::packageload", "structidmmf6fileloadermodule_1_1packageload.html", null ],
+    [ "idmmf6filemodule::packageload", "structidmmf6filemodule_1_1packageload.html", null ],
     [ "packagemovermodule::packagemovertype", "structpackagemovermodule_1_1packagemovertype.html", null ],
     [ "petscconvergencemodule::petsccontexttype", "structpetscconvergencemodule_1_1petsccontexttype.html", null ],
     [ "vectorbasemodule::print_if", "interfacevectorbasemodule_1_1print__if.html", null ],
@@ -327,8 +335,11 @@ var hierarchy =
     [ "sortmodule::unique_values", "interfacesortmodule_1_1unique__values.html", null ],
     [ "uzfcellgroupmodule::uzfcellgrouptype", "structuzfcellgroupmodule_1_1uzfcellgrouptype.html", null ],
     [ "tvbasemodule::validate_change", "interfacetvbasemodule_1_1validate__change.html", null ],
+    [ "virtualdatacontainermodule::vdcelementluttype", "structvirtualdatacontainermodule_1_1vdcelementluttype.html", null ],
+    [ "virtualdatacontainermodule::vdcelementmaptype", "structvirtualdatacontainermodule_1_1vdcelementmaptype.html", null ],
     [ "mpimessagebuildermodule::vdcheadertype", "structmpimessagebuildermodule_1_1vdcheadertype.html", null ],
     [ "virtualdatacontainermodule::vdcptrtype", "structvirtualdatacontainermodule_1_1vdcptrtype.html", null ],
+    [ "mpimessagebuildermodule::vdcreceivermapstype", "structmpimessagebuildermodule_1_1vdcreceivermapstype.html", null ],
     [ "vectorbasemodule::vectorbasetype", "structvectorbasemodule_1_1vectorbasetype.html", [
       [ "petscvectormodule::petscvectortype", "structpetscvectormodule_1_1petscvectortype.html", null ],
       [ "seqvectormodule::seqvectortype", "structseqvectormodule_1_1seqvectortype.html", null ]
