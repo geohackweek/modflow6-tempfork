@@ -396,7 +396,6 @@ contains
     return
   end subroutine set_tsp_labels
 
-
   !> @brief Create listing output file
   !<
   subroutine create_lstfile(this, lst_fname, model_fname, defined)
