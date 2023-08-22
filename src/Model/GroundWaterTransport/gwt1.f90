@@ -8,10 +8,10 @@
 module GwtModule
 
   use KindModule, only: DP, I4B
-  use ConstantsModule, only: LENFTYPE, LENMEMPATH, DZERO, LENPAKLOC
+  use ConstantsModule, only: LENFTYPE, LENMEMPATH, DZERO, LENPAKLOC, &
+                             LENVARNAME
   use VersionModule, only: write_listfile_header
   use NumericalModelModule, only: NumericalModelType
-  use TransportModelModule, only: TransportModelType
   use BaseModelModule, only: BaseModelType
   use BndModule, only: BndType, AddBndToList, GetBndFromList
   use GwtIcModule, only: GwtIcType
@@ -24,6 +24,7 @@ module GwtModule
   use GwtOcModule, only: GwtOcType
   use GwtObsModule, only: GwtObsType
   use BudgetModule, only: BudgetType
+  use TransportModelModule
   use MatrixBaseModule
 
   implicit none
@@ -32,6 +33,10 @@ module GwtModule
   public :: gwt_cr
   public :: GwtModelType
   public :: CastAsGwtModel
+  public :: niunit
+  character(len=LENVARNAME), parameter :: dvt = 'CONCENTRATION   ' !< dependent variable type, varies based on model type
+  character(len=LENVARNAME), parameter :: dvu = 'MASS            ' !< dependent variable unit of measure, either "mass" or "energy"
+  character(len=LENVARNAME), parameter :: dvua = 'M               ' !< abbreviation of the dependent variable unit of measure, either "M" or "J"
 
   type, extends(TransportModelType) :: GwtModelType
 
@@ -44,7 +49,6 @@ module GwtModule
     type(GwtMvtType), pointer :: mvt => null() ! mover transport package
     type(GwtOcType), pointer :: oc => null() ! output control package
     type(GwtObsType), pointer :: obs => null() ! observation package
-    type(BudgetType), pointer :: budget => null() ! budget object
     integer(I4B), pointer :: inic => null() ! unit number IC
     integer(I4B), pointer :: infmi => null() ! unit number FMI
     integer(I4B), pointer :: inmvt => null() ! unit number MVT
@@ -71,6 +75,7 @@ module GwtModule
     procedure :: model_ot => gwt_ot
     procedure :: model_da => gwt_da
     procedure :: model_bdentry => gwt_bdentry
+    procedure :: create_packages => create_gwt_packages
 
     procedure :: allocate_scalars
     procedure, private :: package_create
@@ -81,7 +86,6 @@ module GwtModule
     procedure, private :: gwt_ot_dv
     procedure, private :: gwt_ot_bdsummary
     procedure, private :: gwt_ot_obs
-    procedure, private :: create_packages
     procedure, private :: create_bndpkgs
     procedure, private :: create_lstfile
     procedure, private :: log_namfile_options
@@ -89,32 +93,28 @@ module GwtModule
 
 contains
 
+  !> @brief Create a new groundwater transport model object
+  !<
   subroutine gwt_cr(filename, id, modelname)
-! ******************************************************************************
-! gwt_cr -- Create a new groundwater transport model object
-! ******************************************************************************
-!
-!    SPECIFICATIONS:
-! ------------------------------------------------------------------------------
     ! -- modules
     use ListsModule, only: basemodellist
     use BaseModelModule, only: AddBaseModelToList
-    use ConstantsModule, only: LINELENGTH
+    use ConstantsModule, only: LINELENGTH, LENPACKAGENAME
     use MemoryHelperModule, only: create_mem_path
     use MemoryManagerExtModule, only: mem_set_value
-    use SimVariablesModule, only: idm_context
     use GwfNamInputModule, only: GwfNamParamFoundType
     use BudgetModule, only: budget_cr
+    use GwtMstModule, only: mst_cr
+    use GwtDspModule, only: dsp_cr
     ! -- dummy
     character(len=*), intent(in) :: filename
     integer(I4B), intent(in) :: id
     character(len=*), intent(in) :: modelname
     ! -- local
+    integer(I4B) :: indis
     type(GwtModelType), pointer :: this
     class(BaseModelType), pointer :: model
-    character(len=LENMEMPATH) :: input_mempath
-    character(len=LINELENGTH) :: lst_fname
-    type(GwfNamParamFoundType) :: found
+    cunit(10) = 'CNC6'
     ! -- format
 ! ------------------------------------------------------------------------------
     !
@@ -125,46 +125,20 @@ contains
     this%memoryPath = create_mem_path(modelname)
     !
     call this%allocate_scalars(modelname)
+    !
+    ! -- set labels for transport model - needed by create_packages() below
+    call this%set_tsp_labels(this%macronym, dvt, dvu, dvua)
+    !
     model => this
     call AddBaseModelToList(basemodellist, model)
     !
-    ! -- Assign values
-    this%filename = filename
-    this%name = modelname
-    this%macronym = 'GWT'
-    this%id = id
+    ! -- Call parent class routine
+    call this%tsp_cr(filename, id, modelname, 'GWT', indis)
     !
-    ! -- set input model namfile memory path
-    input_mempath = create_mem_path(modelname, 'NAM', idm_context)
+    ! -- Create model packages
+    call this%create_packages(indis)
     !
-    ! -- copy option params from input context
-    call mem_set_value(lst_fname, 'LIST', input_mempath, found%list)
-    call mem_set_value(this%iprpak, 'PRINT_INPUT', input_mempath, &
-                       found%print_input)
-    call mem_set_value(this%iprflow, 'PRINT_FLOWS', input_mempath, &
-                       found%print_flows)
-    call mem_set_value(this%ipakcb, 'SAVE_FLOWS', input_mempath, found%save_flows)
-    !
-    ! -- create the list file
-    call this%create_lstfile(lst_fname, filename, found%list)
-    !
-    ! -- activate save_flows if found
-    if (found%save_flows) then
-      this%ipakcb = -1
-    end if
-    !
-    ! -- log set options
-    if (this%iout > 0) then
-      call this%log_namfile_options(found)
-    end if
-    !
-    ! -- Create utility objects
-    call budget_cr(this%budget, this%name)
-    !
-    ! -- create model packages
-    call this%create_packages()
-    !
-    ! -- return
+    ! -- Return
     return
   end subroutine gwt_cr
 
@@ -1226,7 +1200,7 @@ contains
 
   !> @brief Source package info and begin to process
   !<
-  subroutine create_packages(this)
+  subroutine create_gwt_packages(this, indis)
     ! -- modules
     use ConstantsModule, only: LINELENGTH, LENPACKAGENAME
     use CharacterStringModule, only: CharacterStringType
@@ -1234,9 +1208,6 @@ contains
     use MemoryManagerModule, only: mem_setptr
     use MemoryHelperModule, only: create_mem_path
     use SimVariablesModule, only: idm_context
-    use GwfDisModule, only: dis_cr
-    use GwfDisvModule, only: disv_cr
-    use GwfDisuModule, only: disu_cr
     use GwtIcModule, only: ic_cr
     use GwtFmiModule, only: fmi_cr
     use GwtMstModule, only: mst_cr
@@ -1248,6 +1219,7 @@ contains
     use GwtObsModule, only: gwt_obs_cr
     ! -- dummy
     class(GwtModelType) :: this
+    integer(I4B), intent(inout) :: indis
     ! -- local
     type(CharacterStringType), dimension(:), contiguous, &
       pointer :: pkgtypes => null()
@@ -1264,7 +1236,6 @@ contains
     integer(I4B), pointer :: inunit
     integer(I4B), dimension(:), allocatable :: bndpkgs
     integer(I4B) :: n
-    integer(I4B) :: indis = 0 ! DIS enabled flag
     character(len=LENMEMPATH) :: mempathdsp = ''
     !
     ! -- set input memory paths, input/model and input/model/namfile
@@ -1286,15 +1257,6 @@ contains
       !
       ! -- create dis package as it is a prerequisite for other packages
       select case (pkgtype)
-      case ('DIS6')
-        indis = 1
-        call dis_cr(this%dis, this%name, mempath, indis, this%iout)
-      case ('DISV6')
-        indis = 1
-        call disv_cr(this%dis, this%name, mempath, indis, this%iout)
-      case ('DISU6')
-        indis = 1
-        call disu_cr(this%dis, this%name, mempath, indis, this%iout)
       case ('IC6')
         this%inic = inunit
       case ('FMI6')
@@ -1340,7 +1302,7 @@ contains
     !
     call this%create_bndpkgs(bndpkgs, pkgtypes, pkgnames, mempaths, inunits)
 
-  end subroutine create_packages
+  end subroutine create_gwt_packages
 
   subroutine create_lstfile(this, lst_fname, model_fname, defined)
     ! -- modules
