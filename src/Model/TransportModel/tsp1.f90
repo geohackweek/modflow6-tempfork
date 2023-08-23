@@ -131,9 +131,9 @@ contains
     use MemoryManagerExtModule, only: mem_set_value
     use SimVariablesModule, only: idm_context
     use GwfNamInputModule, only: GwfNamParamFoundType
-    use GwfDisModule, only: dis_cr
-    use GwfDisvModule, only: disv_cr
-    use GwfDisuModule, only: disu_cr
+    !use GwfDisModule, only: dis_cr
+    !use GwfDisvModule, only: disv_cr
+    !use GwfDisuModule, only: disu_cr
     !use TspAdvModule, only: adv_cr
     !use TspFmiModule, only: fmi_cr
     !use TspIcModule, only: ic_cr

@@ -167,6 +167,7 @@ $(OBJDIR)/gwf3drn8.o \
 $(OBJDIR)/IndexMap.o \
 $(OBJDIR)/VirtualModel.o \
 $(OBJDIR)/BaseExchange.o \
+$(OBJDIR)/MemoryManagerExt.o \
 $(OBJDIR)/IdmSimDfnSelector.o \
 $(OBJDIR)/IdmGwtDfnSelector.o \
 $(OBJDIR)/IdmGwfDfnSelector.o \
@@ -176,13 +177,15 @@ $(OBJDIR)/OutputControlData.o \
 $(OBJDIR)/gwf3ic8.o \
 $(OBJDIR)/Xt3dInterface.o \
 $(OBJDIR)/gwf3tvk8.o \
-$(OBJDIR)/MemoryManagerExt.o \
 $(OBJDIR)/gwf3vsc8.o \
 $(OBJDIR)/GwfNpfOptions.o \
 $(OBJDIR)/InterfaceMap.o \
 $(OBJDIR)/SeqVector.o \
 $(OBJDIR)/CellWithNbrs.o \
 $(OBJDIR)/NumericalExchange.o \
+$(OBJDIR)/gwf3disv8.o \
+$(OBJDIR)/gwf3disu8.o \
+$(OBJDIR)/gwf3dis8.o \
 $(OBJDIR)/IdmDfnSelector.o \
 $(OBJDIR)/gwf3uzf8.o \
 $(OBJDIR)/gwt1apt1.o \
@@ -205,7 +208,6 @@ $(OBJDIR)/LinearSolverBase.o \
 $(OBJDIR)/ims8reordering.o \
 $(OBJDIR)/ArrayReaderBase.o \
 $(OBJDIR)/VirtualExchange.o \
-$(OBJDIR)/gwf3disu8.o \
 $(OBJDIR)/GridSorting.o \
 $(OBJDIR)/DisConnExchange.o \
 $(OBJDIR)/CsrUtils.o \
@@ -224,8 +226,6 @@ $(OBJDIR)/gwt1ist1.o \
 $(OBJDIR)/gwt1dsp1.o \
 $(OBJDIR)/gwt1cnc1.o \
 $(OBJDIR)/gwt1adv1.o \
-$(OBJDIR)/gwf3disv8.o \
-$(OBJDIR)/gwf3dis8.o \
 $(OBJDIR)/gwf3api8.o \
 $(OBJDIR)/gwf3wel8.o \
 $(OBJDIR)/gwf3rch8.o \
