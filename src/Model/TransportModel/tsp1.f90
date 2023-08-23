@@ -42,13 +42,6 @@ module TransportModelModule
   use NumericalModelModule, only: NumericalModelType
   use NumericalPackageModule, only: NumericalPackageType
   use BndModule, only: BndType, GetBndFromList
-  !use TspIcModule, only: TspIcType
-  !use TspFmiModule, only: TspFmiType
-  !use TspAdvModule, only: TspAdvType
-  !use TspSsmModule, only: TspSsmType
-  !use TspMvtModule, only: TspMvtType
-  !use TspOcModule, only: TspOcType
-  !use TspObsModule, only: TspObsType
   use BudgetModule, only: BudgetType
   use MatrixBaseModule
 
@@ -61,24 +54,9 @@ module TransportModelModule
 
   type, extends(NumericalModelType) :: TransportModelType
 
-    !! Generalized transport package types common to either GWT or GWE
-    !type(TspAdvType), pointer :: adv => null() !< advection package
-    !type(TspFmiType), pointer :: fmi => null() !< flow model interface
-    !type(TspIcType), pointer :: ic => null() !< initial conditions package
-    !type(TspMvtType), pointer :: mvt => null() !< mover transport package
-    !type(TspObsType), pointer :: obs => null() !< observation package
-    !type(TspOcType), pointer :: oc => null() !< output control package
-    !type(TspSsmType), pointer :: ssm => null() !< source sink mixing package
     type(BudgetType), pointer :: budget => null() !< budget object
-    !integer(I4B), pointer :: inic => null() !< unit number IC
-    !integer(I4B), pointer :: infmi => null() !< unit number FMI
-    !integer(I4B), pointer :: inmvt => null() !< unit number MVT
-    !integer(I4B), pointer :: inadv => null() !< unit number ADV
-    !integer(I4B), pointer :: inssm => null() !< unit number SSM
-    !integer(I4B), pointer :: inoc => null() !< unit number OC
-    !integer(I4B), pointer :: inobs => null() !< unit number OBS
     real(DP), pointer :: eqnsclfac => null() !< constant factor by which all terms in the model's governing equation are scaled (divided) for formulation and solution
-    ! Labels that will be defined
+    ! Labels to be defined
     character(len=LENVARNAME) :: tsptype = '' !< "solute" or "heat"
     character(len=LENVARNAME) :: depvartype = '' !< "concentration" or "temperature"
     character(len=LENVARNAME) :: depvarunit = '' !< "mass" or "energy"
@@ -131,16 +109,6 @@ contains
     use MemoryManagerExtModule, only: mem_set_value
     use SimVariablesModule, only: idm_context
     use GwfNamInputModule, only: GwfNamParamFoundType
-    !use GwfDisModule, only: dis_cr
-    !use GwfDisvModule, only: disv_cr
-    !use GwfDisuModule, only: disu_cr
-    !use TspAdvModule, only: adv_cr
-    !use TspFmiModule, only: fmi_cr
-    !use TspIcModule, only: ic_cr
-    !use TspMvtModule, only: mvt_cr
-    !use TspObsModule, only: tsp_obs_cr
-    !use TspOcModule, only: oc_cr
-    !use TspSsmModule, only: ssm_cr
     use BudgetModule, only: budget_cr
     use ConstantsModule, only: LINELENGTH
     use InputOutputModule, only: upcase
